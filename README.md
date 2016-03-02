@@ -1,2 +1,2 @@
 # profile-site
-First 
+Personal website development using Angular JS 
