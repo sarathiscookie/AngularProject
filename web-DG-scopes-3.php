@@ -16,15 +16,17 @@
     <div>
         <p>First Increment: {{firstincrement}}</p>
     </div>
-
+    <div>
+        <p>Second Increment: {{secondincrement}}</p>
+    </div>
     <div>
         <button ng-click="firstincrementfn(firstincrement);">First Increment</button>
     </div>
     <div>
-        <button ng-click="firstincrementfn(secondincrement);">Second Increment</button>
+        <button ng-click="secondincrementfn(secondincrement);">Second Increment</button>
     </div>
     <div>
-        <p>Second Increment: {{secondincrement}}</p>
+        <button ng-click="totalincrement(firstincrement, secondincrement);">Total Increment</button>
     </div>
     <div>
         <p>Total is: {{total}}</p>
@@ -36,10 +38,16 @@
         .controller('appController', ['$scope', function($scope){
             $scope.firstincrement  = 1;
             $scope.secondincrement = 1;
-            $scope.firstincrementfn = function(value){
+            $scope.firstincrementfn = function(firstincrement){
                 var first = $scope.firstincrement++;
+                /*$scope.total = first + second;*/
+            }
+            $scope.secondincrementfn = function(secondincrement){
                 var second = $scope.secondincrement++;
-                $scope.total = first + second;
+                /*$scope.total = first + second;*/
+            }
+            $scope.totalincrement = function(firstincrement, secondincrement){
+                $scope.total = firstincrement + secondincrement;
             }
         }]);
 </script>
